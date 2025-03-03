@@ -1,0 +1,14 @@
+<section>
+  <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-2">
+    @for (cat of categories; track cat._id) {
+    <div class="text-center bg-white border border-gray-200 rounded-lg cursor-pointer "
+      [routerLink]="['/categoriesdetails',cat._id]">
+      <img [src]="cat.image" class="w-full h-[350px] object-contain" [alt]="cat.name" />
+      <h3 class="text-slate-600">{{cat.name}}</h3>
+    </div>
+    }
+
+
+
+  </div>
+</section>

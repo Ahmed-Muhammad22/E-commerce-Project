@@ -1,0 +1,138 @@
+<nav class="bg-slate-600 border-gray-200 dark:bg-gray-900">
+  <div class="max-w-screen-3xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
+    <a routerLink="/home" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src="/images/freshcart-logo.svg" alt="fresh cart-logo">
+    </a>
+    <button data-collapse-toggle="navbar-default" type="button"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+      aria-controls="navbar-default" aria-expanded="false">
+      <span class="sr-only">Open main menu</span>
+      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15" />
+      </svg>
+    </button>
+    <div class="hidden flex-grow w-full md:flex md:w-auto" id="navbar-default">
+      @if(isLogin()) {
+      <ul
+        class="capitalize flex flex-col p-4 md:p-0 mt-4  rounded-lg md:flex-row md:space-x-2 rtl:space-x-reverse md:mt-0 md:border-0 text-gray-100 items-center">
+        <li>
+          <a routerLink="/home" routerLinkActive="bg-[#09c]" class="block py-2 px-2 rounded-sm "
+            aria-current="page">{{'navbar.home' | translate}}</a>
+        </li>
+
+        <li>
+          <a routerLink="/products" routerLinkActive="bg-[#09c]" class="block py-2 px-2 rounded-sm "
+            aria-current="page">{{'navbar.products' | translate}}</a>
+        </li>
+        <li>
+          <a routerLink="/categories" routerLinkActive="bg-[#09c]" class="block py-2 px-2 rounded-sm "
+            aria-current="page">{{'navbar.categories' | translate}}</a>
+        </li>
+        <li>
+          <a routerLink="/brands" routerLinkActive="bg-[#09c]" class="block py-2 px-2 rounded-sm "
+            aria-current="page">{{'navbar.brands' | translate}}</a>
+        </li>
+      </ul>
+      }
+      <ul class="flex items-center justify-center ms-auto text-white capitalize cursor-pointer">
+
+        <li>
+          <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+            class="flex items-center justify-between w-full py-2 px-3 text-white rounded-sm   md:border-0  md:p-0 md:w-auto">{{'navbar.lang'
+            | translate}}
+            <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 10 6">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m1 1 4 4 4-4" />
+            </svg></button>
+          <!-- Dropdown menu -->
+          <div id="dropdownNavbar"
+            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600">
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownLargeButton">
+              <li [class.hidden]="translateService.currentLang ==='en'">
+                <a (click)="change('en')" role="button" class="block px-4 py-2 hover:text-[#09c]">EN</a>
+              </li>
+              <li [class.hidden]="translateService.currentLang === 'ar'">
+                <a (click)="change('ar')" role="button" class="block px-4 py-2 hover:text-[#09c]">Ar</a>
+              </li>
+
+            </ul>
+
+          </div>
+        </li>
+
+
+
+
+
+
+        @if (!isLogin()) {
+        <li>
+          <a class="block py-2 px-3 rounded-sm cursor-pointer" routerLink="/login"
+            routerLinkActive="bg-[#09c] text-black" aria-current="page">{{'navbar.login' | translate
+            }}</a>
+        </li>
+        <li>
+          <a class="block py-2 px-3 rounded-sm cursor-pointer" routerLink="/register" routerLinkActive="bg-[#09c]"
+            aria-current="page">{{'navbar.register' | translate}}</a>
+        </li>
+        }@else{
+        <li>
+          <a class=" py-2 px-2 rounded-sm "><i class="fab fa-facebook"></i></a>
+        </li>
+        <li>
+          <a class=" py-2 px-2 rounded-sm "><i class="fab fa-twitter"></i></a>
+        </li>
+        <li>
+          <a class=" py-2 px-2 rounded-sm "><i class="fab fa-linkedin"></i></a>
+        </li>
+        <li>
+          <a class=" py-2 px-2 rounded-sm "><i class="fab fa-snapchat"></i></a>
+        </li>
+        <li>
+          <a class=" py-2 px-2 rounded-sm "><i class="fab fa-instagram"></i></a>
+        </li>
+        <li class="relative">
+          <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar1"
+            class="flex items-center justify-between w-full py-2 px-3 text-white rounded-sm md:border-0 md:p-0 md:w-auto">
+            <i class="fas fa-user mx-3 text-2xl"></i>
+          </button>
+
+          <div id="dropdownNavbar1"
+            class="absolute right-0 z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-md w-44 dark:bg-gray-700 dark:divide-gray-600">
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
+              <li>
+                <a role="button" class="block px-4 py-2 hover:text-[#09c]" routerLink="/allorders"
+                  routerLinkActive="text-[#09c]">My
+                  Orders</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a routerLink="/wishlist" routerLinkActive="text-[#09c]" class=" py-2 px-2 rounded-sm relative">
+            <i class="fa-solid fa-heart text-3xl"></i>
+            <span
+              class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-green-600/20 ring-inset absolute -top-3 -start-1 ">{{countWishlist()}}</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/cart" routerLinkActive="text-[#09c]" class="block py-2 px-2 rounded-sm relative"
+            aria-current="page">
+
+            <i class="fas fa-cart-shopping text-3xl"></i>
+            <span
+              class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-green-600/20 ring-inset absolute top-0 start-0 ">{{countCart()}}</span>
+          </a>
+
+        </li>
+        <li>
+          <a role="button" class="block py-2 px-3 rounded-sm " aria-current="page"
+            (click)="_AuthService.logOut()">{{'navbar.logout' | translate}}</a>
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+</nav>

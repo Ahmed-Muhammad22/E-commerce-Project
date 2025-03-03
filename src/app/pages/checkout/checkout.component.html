@@ -1,0 +1,97 @@
+<section class="bg-slate-600 w-3/4 mx-auto p-8 rounded shadow-[-5px 2px 54px -9px rgba(0, 0, 0, 1)]">
+  <h1 class="text-[#17A2B8] font-medium text-[40px] leading-normal mb-5 text-center">{{'checkout.Checkout' | translate}}
+  </h1>
+  <form [formGroup]="checkOutForm">
+    <div class="mb-3">
+      <label for="details" class="block mb-3 capitalize  text-sm font-medium text-gray-100">{{'checkout.details' |
+        translate}}:</label>
+      <textarea id="details"
+        class="block p-[15px] w-full text-sm text-white bg-transparent rounded-lg border border-[#ced4da] text-[17px] resize-y focus:border-[#17A2B8] focus:outline-none"
+        placeholder="{{'checkout.Write your details here...' | translate}}" formControlName="details">
+      </textarea>
+      @if (checkOutForm.get('details')?.errors && checkOutForm.get('details')?.touched) {
+      <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert">
+
+        <span class="sr-only">Danger</span>
+        <div>
+
+          <ul class="mt-1.5  list-none list-inside">
+
+            @if (checkOutForm.get('details')?.getError('required')) {
+            <li>{{'checkout.Details should be required' | translate}}</li>
+            }
+
+
+          </ul>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="mb-3">
+      @let phoneControl = checkOutForm.get('phone');
+      <label for="phone" class="block mb-3 capitalize  text-sm font-medium text-gray-100">{{'checkout.phone' |
+        translate}}:</label>
+      <input id="phone" type="text" formControlName="phone" placeholder="{{'checkout.Enter your phone' | translate}}">
+      @if (phoneControl?.errors && phoneControl?.touched ){
+      <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert">
+
+        <span class="sr-only">Danger</span>
+        <div>
+
+          <ul class="mt-1.5  list-none list-inside">
+
+            @if (phoneControl?.getError('required')) {
+            <li>{{'checkout.Phone should be required' | translate}}</li>
+            }
+            @if (phoneControl?.getError('pattern')) {
+            <li>{{'checkout.Enter a valid phone' | translate}}</li>
+            }
+
+          </ul>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="mb-3">
+      @let cityControl = checkOutForm.get('city');
+      <label for="city" class="block mb-3 capitalize  text-sm font-medium text-gray-100">{{'checkout.city' |
+        translate}}:</label>
+      <input id="city" type="text" formControlName="city" placeholder="{{'checkout.Enter your city' | translate}}">
+      @if (phoneControl?.errors && phoneControl?.touched ){
+      <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert">
+
+        <span class="sr-only">Danger</span>
+        <div>
+
+          <ul class="mt-1.5  list-none list-inside">
+
+            @if (cityControl?.getError('required')) {
+            <li>{{'checkout.City should be required' | translate}}</li>
+            }
+            @if (cityControl?.getError('pattern')) {
+            <li>{{'checkout.Enter a valid city' | translate}}</li>
+            }
+
+          </ul>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="flex justify-between items-center">
+      <button (click)="submitForm($event)" type="submit" [disabled]="checkOutForm.invalid"> {{'checkout.Online Payment'
+        | translate}}
+        <img src="/images/visa-1.svg" alt="visa image" width="40px" class="inline-block" />
+
+
+      </button>
+      <button (click)="getCashPay()" type="submit" [disabled]="checkOutForm.invalid">{{'checkout.Cash Payment' |
+        translate}}
+        <i class="fa-solid fa-truck"></i>
+
+      </button>
+    </div>
+  </form>
+</section>

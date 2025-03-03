@@ -1,0 +1,83 @@
+<section class="bg-slate-600 w-3/4 mx-auto p-8 rounded shadow-[-5px 2px 54px -9px rgba(0, 0, 0, 1)]">
+  <h1 class="text-[#17A2B8] font-medium text-[40px] leading-normal mb-5 text-center">{{'login.LoginNow' | translate}}
+  </h1>
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+
+    <div class="mb-3">
+      @let emailControl =loginForm.get("email");
+      <label for="email" class="block mb-2 capitalize text-sm font-medium text-gray-100">{{'login.email' |
+        translate}}:</label>
+      <input formControlName="email" type="email" id="email" placeholder="{{'login.Enter your email' | translate}}"
+        class="w-full p-2 text-gray-800 bg-gray-100 rounded-lg dark:bg-gray-800 dark:text-gray-100"
+        [class.border-red-500]="emailControl?.errors && emailControl?.touched" />
+      @if (emailControl?.errors && emailControl?.touched ){
+      <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert">
+
+        <span class="sr-only">Danger</span>
+        <div>
+
+          <ul class="mt-1.5  list-none list-inside">
+
+            @if (emailControl?.getError('required')) {
+            <li>{{'login.Email should be required' | translate}}</li>
+            }
+            @if (emailControl?.getError('email')) {
+            <li>{{'login.Enter a valid email' | translate}}</li>
+            }
+
+          </ul>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="mb-3">
+      @let passwordControl = loginForm.get("password");
+      <label for="password" class="block mb-2 capitalize text-sm font-medium text-gray-100">{{'login.password' |
+        translate}}:</label>
+      <input formControlName="password" type="password" id="password" placeholder="{{'login.Enter your password' | translate}}"
+        class="w-full p-2 text-gray-800 bg-gray-100 rounded-lg dark:bg-gray-800 dark:text-gray-100"
+        [class.border-red-500]="passwordControl?.errors && passwordControl?.touched" />
+      @if (passwordControl?.errors && passwordControl?.touched ){
+      <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert">
+
+        <span class="sr-only">Danger</span>
+        <div>
+
+          <ul class="mt-1.5  list-none list-inside">
+
+            @if (passwordControl?.getError('required')) {
+            <li>{{'login.Password should be required' | translate }}</li>
+            }
+            @if (passwordControl?.getError('pattern')) {
+            <li>{{'login.Enter a valid password' | translate}}</li>
+            }
+
+          </ul>
+        </div>
+      </div>
+      }
+    </div>
+
+
+
+    <button [disabled]="isLoading" type="submit">{{'login.signin' | translate}}
+      @if (isLoading) {
+      <span><i class="fas fa-spin fa-spinner"></i></span>
+      }
+    </button>
+    @if (msgError) {
+    <p class="bg-red-500 text-white px-2 py-4 mt-3 border">{{'login.msgError'| translate}}</p>
+    }
+    @if (success) {
+    <p class="bg-green-500 text-white px-2 py-4 mt-3 border">{{'login.success'| translate}}</p>
+    }
+
+    <a routerLink="/Forgot"
+      class="text-white block text-center   hover:text-[#17A2B8] transition-colors duration-500  cursor-pointer">
+      {{'login.forgot password' | translate}}
+
+    </a>
+  </form>
+</section>

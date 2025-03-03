@@ -1,0 +1,49 @@
+@if (detailsProduct) {
+<section class="bg-slate-600 w-3/4 mx-auto p-8 rounded shadow-[-5px 2px 54px -9px rgba(0, 0, 0, 1)]">
+  <h1 class="text-5xl text-center text-gray-100">Product Detail</h1>
+  <div class="grid grid-cols-[30%_60%] items-center">
+    <div>
+      <owl-carousel-o [options]="customOptions">
+
+        @for (img of detailsProduct.images; track detailsProduct.id) {
+        <ng-template carouselSlide>
+          <div>
+            <img [src]="img" class="w-full h-[250px] object-contain" [alt]="detailsProduct.title" />
+          </div>
+        </ng-template>
+        }
+
+
+      </owl-carousel-o>
+    </div>
+    <div>
+      <h3 class="text-xl text-white font-semibold">{{detailsProduct.category.name}}</h3>
+      <h5 class="text-lg font-medium tracking-tight text-gray-900 dark:text-white">
+        {{ detailsProduct.title }}
+      </h5>
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-lg  font-normal text-gray-900 dark:text-white">{{detailsProduct.price | currency:"EGP"
+          }}</span>
+        <div class="flex items-center mt-2.5 mb-5">
+          <div class="flex items-center space-x-2 rtl:space-x-reverse translate-y-2">
+            @for (star of [1, 2, 3, 4, 5].slice(0, detailsProduct.ratingsAverage); track $index) {
+            <span><i class="fas fa-star rating-color text-yellow-300"></i></span>
+            }
+            @if (detailsProduct.ratingsAverage % 1 !== 0 ) {
+            <i class="fa-solid fa-star-half-stroke rating-color text-yellow-300"></i>
+            }
+            <span class="text-sm font-medium text-gray-100">
+              {{detailsProduct.ratingsAverage }}
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <button (click)="addCardItem(detailsProduct.id)"
+    class="text-white   bg-blue-500 mx-auto w-[80%] block hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 mt-3 mb-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
+    to cart</button>
+</section>
+}

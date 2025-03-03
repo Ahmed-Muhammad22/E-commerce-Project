@@ -1,0 +1,28 @@
+@if (detailsCategory) {
+<section class="bg-slate-600 w-3/4 mx-auto p-8 rounded shadow-[-5px 2px 54px -9px rgba(0, 0, 0, 1)]">
+  <h1 class="text-5xl text-center text-gray-100">Category Detail</h1>
+  <div class="grid grid-cols-[30%_60%] items-center gap-5">
+    <div>
+      <div>
+        <img [src]="detailsCategory.image" class="w-full h-[250px] object-contain" [alt]="detailsCategory.name" />
+      </div>
+    </div>
+    <div>
+      <h3 class="text-xl text-white font-semibold">{{detailsCategory.name}}</h3>
+      <h5 class="text-lg font-medium tracking-tight text-gray-400 dark:text-white my-2">
+        SubCategories:
+      </h5>
+
+      @for (subCat of subCategoryData; track $index) {
+      <span class="bg-[#09c] text-white text-xs font-medium me-3 my-3 px-3 py-2 rounded-md">
+        {{subCat.name}}
+      </span>
+      }
+
+
+    </div>
+  </div>
+
+
+</section>
+}

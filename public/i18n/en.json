@@ -1,0 +1,121 @@
+{
+  "navbar":{
+    "home":"Home",
+    "products":"Products",
+    "categories":"Categories",
+    "brands":"Brands",
+    "login":"LogIn",
+    "register":"Register",
+    "logout":"LogOut",
+    "lang":"Lang"
+  },
+  "login": {
+       "LoginNow":"Login Now",
+       "email":"Email",
+       "password":"Password",
+       "signin":"Sign In",
+       "forgot password": "Forgot Password",
+       "msgError":"Error",
+       "success":"Success",
+       "Enter a valid password" :"Enter a valid password",
+       "Password should be required":"Password should be required",
+       "Email should be required":"Email should be required",
+       "Enter a valid email":"Enter a valid email",
+       "Enter your password":"Enter your password",
+       "Enter your email":"Enter your email"
+  },
+  "forgotpassword": {
+    "forgotpassword":" Forgot Password",
+    "email":"Email",
+    "Verify Email":"Verify Email",
+    "Email should be required":"Email should be required",
+    "Enter a valid email":"Enter a valid email",
+    "resetCode":"Reset Code",
+    "verifyCode":"Verify Code",
+    "Code should be required":"Code should be required",
+    "Enter a valid code":"Enter a valid code",
+    "Enter a valid password" :"Enter a valid password",
+    "Password should be required":"Password should be required",
+    "newPassword" : "New Password",
+    "resetPassword":"Reset Password"
+  },
+  "footer":{
+    "Get The FreshCart App":"Get The FreshCart App",
+    "We Will Send You a Link, Open it on Your Phone to download the app" : "We Will Send You a Link, Open it on Your Phone to download the app",
+    "Payment partners" : "Payment partners",
+    "Get Deliveries with FreshCart" : "Get Deliveries with FreshCart",
+    "Share App Link" : "Share App Link",
+    "email":"Email"
+  },
+  "home":{
+    "Search":"search By Name...",
+   "Popular Products" : "Popular Products",
+   "Popular Categories" : "Popular Categories"
+  },
+  "register":{
+      "Register Now" : "Register Now",
+      "name":"Name",
+      "Name should be required" : "Name should be required",
+      "Name should be more than or equal 3 letters": "Name should be more than or equal 3 letters",
+      "Name should be less than or equal 20 letters" : "Name should be less than or equal 20 letters",
+      "email":"Email",
+      "Email should be required":"Email should be required",
+      "Enter a valid email":"Enter a valid email",
+      "password":"Password",
+      "Enter a valid password" :"Enter a valid password",
+      "Password should be required":"Password should be required",
+      "rePassword" : "rePassword",
+      "Password confirmation is incorrect" : "Password confirmation is incorrect",
+      "phone" : "Phone",
+      "Phone should be required" : "Phone should be required",
+      "Enter a valid phone" : "Enter a valid phone",
+      "Sign Up" : "Sign Up",
+      "msgError":"Error",
+       "success":"Success",
+       "Enter your password":"Enter your password",
+       "Enter your email":"Enter your email",
+       "Enter your name":"Enter your name",
+       "Enter your phone":"Enter your phone",
+       "Confirm your password":"Confirm your password"
+    },
+    "allorders":{
+    "All Orders":"All Orders",
+    "Price":"Price",
+    "Order":"Order",
+    "Your orders are empty":"Your orders are empty",
+    "Count":"Count",
+    "Is Delivered":"Is Delivered",
+    "Is Paid":"Is Paid",
+    "Payment Method":"Payment Method",
+    "Total Order Price":"Total Order Price"
+    },
+    "cart":{
+       "Shop Cart":"Shop Cart",
+       "Total Cart Price":"Total Cart Price",
+       "Clear Cart":"Clear Cart",
+       "Price":"Price",
+       "Checkout":"Checkout",
+       "Remove":"Remove",
+       "No Data Found":"No Data Found"
+    },
+    "checkout":{
+       "Checkout":"Checkout",
+       "details":"Details",
+       "Details should be required":"Details should be required",
+       "phone":"Phone",
+        "Phone should be required":"Phone should be required",
+        "Enter a valid phone":"Enter a valid phone",
+        "city":"City",
+        "City should be required":"City should be required",
+        "Enter a valid city":"Enter a valid city",
+        "Online Payment":"Online Payment",
+        "Cash Payment":"Cash Payment",
+        "Write your details here...":"Write your details here...",
+        "Enter your city":"Enter your city",
+        "Enter your phone":"Enter your phone"
+    },
+    "wishlist":{
+      "Your WishList Is Empty":"Your WishList Is Empty"
+    }
+}
+

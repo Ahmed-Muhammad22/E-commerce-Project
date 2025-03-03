@@ -1,0 +1,132 @@
+{
+  "navbar": {
+    "home": "الرئيسية",
+    "products": "المنتجات",
+    "categories": "الفئات",
+    "brands": "العلامات التجارية",
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "logout": "تسجيل الخروج",
+    "lang": "اللغة"
+  },
+ "login": {
+    "LoginNow": "تسجيل الدخول الآن",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "signin": "تسجيل الدخول",
+    "Enter your password": "أدخل كلمة المرور",
+    "Enter your email": "أدخل بريدك الإلكتروني",
+    "forgot password": "نسيت كلمة المرور",
+    "msgError": "خطأ",
+    "success": "نجاح",
+    "Enter a valid password": "أدخل كلمة مرور صحيحة",
+    "Password should be required": "كلمة المرور مطلوبة",
+    "Email should be required": "البريد الإلكتروني مطلوب",
+    "Enter a valid email": "أدخل بريدًا إلكترونيًا صحيحًا"
+},
+"forgotpassword": {
+  "forgotpassword": "نسيت كلمة المرور",
+    "email": "البريد الإلكتروني",
+    "Verify Email": "تحقق من البريد الإلكتروني",
+    "Email should be required": "البريد الإلكتروني مطلوب",
+    "Enter a valid email": "أدخل بريدًا إلكترونيًا صحيحًا",
+    "resetCode": "رمز إعادة التعيين",
+    "verifyCode": "تحقق من الرمز",
+    "Code should be required": "الرمز مطلوب",
+    "Enter a valid code": "أدخل رمزًا صحيحًا",
+    "Enter a valid password": "أدخل كلمة مرور صحيحة",
+    "Password should be required": "كلمة المرور مطلوبة",
+    "newPassword": "كلمة مرور جديدة",
+    "resetPassword": "إعادة تعيين كلمة المرور"
+},
+"footer": {
+    "Get The FreshCart App": "احصل على تطبيق فريش كارت",
+    "We Will Send You a Link, Open it on Your Phone to download the app": "سنرسل لك رابطًا، افتحه على هاتفك لتنزيل التطبيق",
+    "Payment partners": "شركاء الدفع",
+    "Get Deliveries with FreshCart": "احصل على التوصيل مع فريش كارت",
+    "Share App Link": "مشاركة رابط التطبيق",
+    "email": "البريد الإلكتروني"
+},
+"home": {
+  "Search": "ابحث بالاسم",
+   "Popular Products": "المنتجات الشائعة",
+   "Popular Categories": "الفئات الشائعة"
+},
+"register": {
+    "Register Now": "سجل الآن",
+    "name": "الاسم",
+    "Name should be required": "يجب إدخال الاسم",
+    "Name should be more than or equal 3 letters": "يجب أن يكون الاسم 3 أحرف أو أكثر",
+    "Name should be less than or equal 20 letters": "يجب أن يكون الاسم 20 حرفًا أو أقل",
+    "email": "البريد الإلكتروني",
+    "Email should be required": "يجب إدخال البريد الإلكتروني",
+    "Enter a valid email": "أدخل بريدًا إلكترونيًا صالحًا",
+    "password": "كلمة المرور",
+    "Enter a valid password": "أدخل كلمة مرور صالحة",
+    "Password should be required": "يجب إدخال كلمة المرور",
+    "rePassword": "تأكيد كلمة المرور",
+    "Password confirmation is incorrect": "تأكيد كلمة المرور غير صحيح",
+    "phone": "رقم الهاتف",
+    "Phone should be required": "يجب إدخال رقم الهاتف",
+    "Enter a valid phone": "أدخل رقم هاتف صالح",
+    "Sign Up": "اشترك",
+    "msgError": "خطأ",
+    "success": "نجاح",
+    "Enter your password": "أدخل كلمة المرور",
+   "Enter your email": "أدخل بريدك الإلكتروني",
+   "Enter your name": "أدخل اسمك",
+   "Enter your phone": "أدخل رقم هاتفك",
+   "Confirm your password": "أعد إدخال كلمة المرور"
+
+
+},
+"allorders": {
+    "All Orders": "جميع الطلبات",
+    "Price": "السعر",
+    "Order": "الطلب",
+    "Your orders are empty": "لا توجد طلبات لديك",
+    "Count": "الكمية",
+    "Is Delivered": "تم التوصيل",
+    "Is Paid": "تم الدفع",
+    "Payment Method": "طريقة الدفع",
+    "Total Order Price": "إجمالي سعر الطلب"
+}
+,
+"cart": {
+    "Shop Cart": "سلة التسوق",
+    "Total Cart Price": "إجمالي سعر السلة",
+    "Clear Cart": "تفريغ السلة",
+    "Price": "السعر",
+    "Checkout": "إتمام الشراء",
+    "Remove": "إزالة",
+    "No Data Found": "لم يتم العثور على بيانات"
+},
+"checkout": {
+    "Checkout": "إتمام الشراء",
+    "details": "التفاصيل",
+    "Details should be required": "يجب إدخال التفاصيل",
+    "phone": "الهاتف",
+    "Phone should be required": "يجب إدخال رقم الهاتف",
+    "Enter a valid phone": "أدخل رقم هاتف صالح",
+    "city": "المدينة",
+    "City should be required": "يجب إدخال المدينة",
+    "Enter a valid city": "أدخل مدينة صالحة",
+    "Online Payment": "الدفع الإلكتروني",
+    "Cash Payment": "الدفع نقدًا",
+    "Write your details here...": "اكتب تفاصيلك هنا",
+    "Enter your city": "أدخل مدينتك",
+    "Enter your phone": "أدخل رقم هاتفك"
+},
+"wishlist": {
+    "Your WishList Is Empty": "قائمة الأمنيات فارغة"
+}
+
+
+
+
+
+
+
+
+}
+

@@ -1,0 +1,71 @@
+@if (orders.length > 0) {
+<Section class="bg-slate-600 mx-auto w-3/4 p-4 rounded shadow border">
+
+
+
+  <h2 class="text-center text-4xl font-semibold text-white mb-4">{{'allorders.All Orders' |translate}}</h2>
+
+  @for (order of orders; track order.id; let i = $index) {
+  <div class="rounded-lg shadow-md p-4 mb-6">
+    <h3 class="text-lg font-semibold text-white mb-3">{{'allorders.Order' | translate}}: {{ i + 1 }}</h3>
+
+
+    <div class="grid md:grid-cols-[30%_60%] gap-6 relative text-white">
+
+      <div>
+        @for (cartItem of order.cartItems; track $index) {
+        <div class="flex items-center gap-4 p-3 border-b last:border-b-0 border-gray-300">
+
+          <div class="flex-shrink-0">
+            <img [src]="cartItem.product.imageCover" class="w-20 h-20 object-contain rounded-lg"
+              [alt]="cartItem.product.title">
+          </div>
+
+
+          <div class="flex flex-col">
+            <h3 class="text-white font-medium text-lg">{{ cartItem.product.title }}</h3>
+            <p class="text-white">{{'allorders.Count' | translate}}: {{ cartItem.count }}</p>
+            <p class="text-white">{{'allorders.Price' | translate}}: {{ cartItem.price }}</p>
+          </div>
+        </div>
+        }
+      </div>
+      <div
+        class="p-4 bg-white rounded-lg shadow-md self-center absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2  ms-[70px]">
+        <p class="flex items-center gap-2 text-gray-700">
+          <span>{{'allorders.Is Delivered' | translate}}:</span>
+          <span [class]="order.isDelivered ? 'bg-green-500 text-white' : 'bg-red-500 text-white'"
+            class="px-2 py-1 rounded-md text-sm font-semibold">
+            {{ order.isDelivered ? "Yes" : "No" }}
+          </span>
+        </p>
+
+        <p class="flex items-center gap-2 text-gray-700">
+          <span>{{'allorders.Is Paid' | translate}}:</span>
+          <span [class]="order.isPaid ? 'bg-green-500 text-white' : 'bg-red-500 text-white'"
+            class="px-2 py-1 rounded-md text-sm font-semibold">
+            {{ order.isPaid ? "Yes" : "No" }}
+          </span>
+        </p>
+
+        <p class="text-gray-700"><strong>{{'allorders.Payment Method' | translate}}:</strong> {{ order.paymentMethodType
+          }}</p>
+        <p class="text-gray-700"><strong>{{'allorders.Total Order Price' | translate}}:</strong> {{
+          order.totalOrderPrice | currency: "EGP" }}</p>
+      </div>
+    </div>
+  </div>
+  }
+
+
+
+
+
+
+
+
+</Section>
+}
+@else {
+<h1 class="text-center font-bold">{{'allorders.Your orders are empty' | translate}}</h1>
+}

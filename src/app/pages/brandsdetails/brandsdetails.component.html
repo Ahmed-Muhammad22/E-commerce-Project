@@ -1,0 +1,17 @@
+@if (detailsBrand) {
+<section class="bg-slate-600 w-3/4 mx-auto p-8 rounded shadow-[-5px 2px 54px -9px rgba(0, 0, 0, 1)]">
+  <h1 class="text-5xl text-center text-gray-100">Brand Detail</h1>
+  <div class="grid grid-cols-[30%_60%] items-center gap-5">
+    <div>
+      <div>
+        <img [src]="detailsBrand.image" class="w-full h-[250px] object-contain" [alt]="detailsBrand.name" />
+      </div>
+    </div>
+    <div>
+      <h3 class="text-xl text-white font-semibold">{{detailsBrand.name}}</h3>
+    </div>
+  </div>
+
+
+</section>
+}

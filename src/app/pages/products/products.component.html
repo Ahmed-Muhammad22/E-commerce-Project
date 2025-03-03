@@ -1,0 +1,50 @@
+<Section>
+  <div class="grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
+    @for (prod of products | search: term; track prod._id) {
+
+    <div
+      class=" card hover:scale-110 transition-all duration-500 relative    bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+
+      <div class="px-5 pb-5">
+        <div>
+          <span (click)="addProductToWish(prod._id)"><i class="fa-solid fa-heart text-2xl text-[#09c] heart"></i></span>
+        </div>
+        <div [routerLink]="['/productsdetails',prod._id]">
+          <div>
+
+            <img class="p-8 rounded-t-lg w-full h-[250px] object-contain" [src]="prod.imageCover" [alt]="prod.title" />
+          </div>
+          <h3 class="text-xl text-slate-600 font-semibold">{{prod.category.name}}</h3>
+          <h5 class="text-lg font-medium tracking-tight text-gray-900 dark:text-white">
+            {{ prod.title | text : 2}}
+          </h5>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-lg  font-normal text-gray-900 dark:text-white">{{prod.price | currency:"EGP" }}</span>
+            <div class="flex items-center mt-2.5 mb-5">
+              <div class="flex items-center space-x-2 rtl:space-x-reverse translate-y-2">
+                @for (star of [1, 2, 3, 4, 5].slice(0, prod.ratingsAverage); track $index) {
+                <span><i class="fas fa-star rating-color text-yellow-300"></i></span>
+                }
+                @if (prod.ratingsAverage % 1 !== 0 ) {
+                <i class="fa-solid fa-star-half-stroke rating-color text-yellow-300"></i>
+                }
+                <span class="text-sm font-medium text-gray-500">
+                  {{prod.ratingsAverage }}
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <button (click)="addCardItem(prod._id)"
+          class="text-white   bg-blue-500 mx-auto w-full block hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 mt-3 mb-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
+          to cart</button>
+      </div>
+    </div>
+    }
+  </div>
+
+
+
+
+</Section>
